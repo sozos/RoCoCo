@@ -1,18 +1,36 @@
 <html>
 	<head>
 		<style type="text/css">
-			table {
+			.heading {
 				text-align: center;
+				font-size: 30;
+			}
+
+			table {
 				border: 1px blue;
 				border-collapse: collapse;
 				width: 1200px;
 				table-layout: fixed;
+				padding: 10px;
 			}
+
+			th {
+				padding: 25px;
+			}
+			
 			tr {
 				valign: top;
 			}
+			
 			td {
 				text-align: justify;
+				vertical-align: top;
+			}
+			
+			h4 {
+				text-align: center;
+				font-style: bold;
+				font-size: 20;
 			}
 		</style>
 	</head>
@@ -20,62 +38,74 @@
 		<h1>RoCoCo</h1>
 		<h3>Done by: Davin Choo and Lee Yik Jiun</h3>
 		<h3>Mentored by: Dr. Martin Henz & Srikumar Subramanian</h3>
-		
-	<table>
-		
-		<th>
-			<font size = "7">What is it?</font>
-		</th>
-		
-		<tr>
-			<td><table>
+	
+		<div class="heading">What is it?</div>
+
+		<div align="center">
+			<table border="1" cellpadding="10px">
 				<tr>
 					<td><h4>About</h4></td>
 					<td><h4>Problem</h4></td>
 					<td><h4>Related Works</h4></td>
 					<td><h4>Definitions</h4></td>
 				</tr>
-					<tr>
+				<tr>
 					<td>
-						Round-robin with Courts and Constraints (RoCoCo) is a product of a project undertaken by 2 students (Davin and Yik Jiun) for their NUS module CS1010R - Javascript, under the guidance of Dr. Martin Henz.<br />
+						<p>
+						Round-robin with Courts and Constraints (RoCoCo) is a product of a project undertaken by 2 students (Davin and Yik Jiun) for their NUS module CS1010R - Javascript, under the guidance of Dr. Martin Henz.
+						</p>
+						<br />
+						<p>
 						As part of their project, they are to make use of a constraint library built by Srikumar (insert link to fd.js/references below) to create a simple to use, yet powerful <i>dense single round robin tournament scheduler</i>.<br />
+						</p>
 					</td>
 					<td>
-						asdfasdfa
+						<p>
+						
+						</p>
 					</td>
 					<td>
-						A quick search online for "Sports Tournament Scheduling" gives us a top search result <a href="http://www.teamopolis.com/tools/round-robin-generator.aspx">Free Round Robin Tournament Generator Tool</a>. As you can see, the user interface is rather clunky and not intuitive.<br />
+						<p>
+						A quick search online for "Sports Tournament Scheduling" gives us a top search result <a href="http://www.teamopolis.com/tools/round-robin-generator.aspx">Free Round Robin Tournament Generator Tool</a>. As you can see, the user interface is rather clunky and not intuitive.
+						</p>
+						<br />
+						<p>
 						Using Javascript and the fd.js library, we have created a quick, interactive and intuitively simple sports tournament scheduler. We also allow the user to define further constraints.
+						</p>
 					</td>
 					<td>
-						<i>Dense</i><br />
+						<p>
+						<u><i>Dense</i></u><br />
 						The schedule is organized in rounds, where in each round a team plays at most once.<br />
 						"Dense" then means that the number of rounds is minimal.<br />
 						For an even number of teams N, the number of rounds will be N-1, which means that each team plays exactly once in each round.<br />
 						For an odd number of teams N, the number of rounds will be N; each team had one round in which it does not play.
 						</p>
+						
+						<br />
+						
 						<p>
-						<i>Single Round Robin</i><br />
+						<u><i>Single Round Robin</i></u><br />
 						Every team must play against every other team exactly once by the end of the tournament.
 						</p>
+						
+						<br />
+						
 						<p>
-						<i>Venues</i><br />
+						<u><i>Venues</i></u><br />
 						In each round, each venue can only host 2 teams or no teams (i.e. unused).
 						</p>
 					</td>
 				</tr>
-			</table></td>
-		</tr>
+			</table>
+		</div>
 		
-		<tr>		
-			<td align="center">
-				<font size = "10">How to use?</font>
-			</td>
-		</tr>
 		
-		<tr>
-			<td><table border="1"><col width="600">
-				<tr valign="top">
+		<div class="heading">How to use?</div>
+			
+		<div align="center">
+			<table border="1" cellpadding="10px">
+				<tr>
 					<td>
 					<b>Layout</b><br />
 						<img src="images/doc_layout.png" width="500"/><br /><br /><br />
@@ -119,86 +149,65 @@
 								<li>Press "pause"(Insert pic) to stop solution generation</li>
 							</ul>
 					</td>
+			</table>
+		</div>
+			
+		<div class="heading">Demos</div>
+			
+		<div align="center">
+			<table border="1" cellpadding="10px">
+				<tr>
+					<td>
+						<p>Demo 1 - Modelling a tournament</p>
+						[Insert vid]
+					</td>
+					<td>
+						<p>Demo 2 - Extracting the results for usage</p>
+						[Insert vid]
+					</td>
 				</tr>
-			</table></td>
-		</tr>
+			</table>
+		</div>
 		
-		<tr>
-			<td align="center">
-				<font size = "8">Demos (embed video or interactive demo or both?)</font>
-			</td>
-		</tr>
+		<div class="heading">Frequently Asked Questions (FAQ)</div>
 		
-		<tr>
-			<td><table border="1"><col width="600">
-			<tr valign="top">
-				<td>
-					<p>Demo 1 - Modelling a tournament</p>
-					[Insert vid]
-				</td>
-				<td>
-					<p>Demo 2 - Extracting the results for usage</p>
-					[Insert vid]
-				</td>
-			</tr>
-			</table></td>
-		</tr>
+		<div align="center">
+			<table border="1" cellpadding="10px">
+				<tr>
+					<td>
+						<p>
+						<b>Q: How do I reset the scheduler?</b><br />
+						Just press F5 or refresh your browser ;)
+						</p>
+						<p>
+						<b>Q: Can I export the solution table?</b><br />
+						Yes! Just select it with your mouse and copy-paste it!
+						</p>
+						<p>
+						<b>Q: What if I am holding the tournament at only 1 location with 3 courts?</b><br />
+						Think of the "Venues" as "Courts" and name them as "Court 1", "Court 2" and "Court 3". Everything will work out :)
+						</p>
+						<p>
+						<b>Q: What if I want breaks in between matches?</b><br />
+						The "Rounds" are just to indicate the time frames for the matches. You can always hold them on separate days etc.
+						</p>
+					</td>
+				</tr>
+			</table>
+		</div>
 		
-		<tr>
-			<td><table border="1"><col width="600">
-			<tr valign="top">
-				<td align="center">
-					<font size = "8">Frequently Asked Questions (FAQ)</font>
-				</td>
-				<td align="center">
-					<font size = "8">References</font>
-				</td>
-			</tr>
-			</table></td>
-		</tr>
-		
-		<tr>
-			<td><table border="1"><col width="600">
-			<tr valign="top">
-				<td>
-					<p>
-					<b>Q: How do I reset the scheduler?</b><br />
-					Just press F5 or refresh your browser ;)
-					</p>
-					<p>
-					<b>Q: Can I export the solution table?</b><br />
-					Yes! Just select it with your mouse and copy-paste it!
-					</p>
-					<p>
-					<b>Q: What if I am holding the tournament at only 1 location with 3 courts?</b><br />
-					Think of the "Venues" as "Courts" and name them as "Court 1", "Court 2" and "Court 3". Everything will work out :)
-					</p>
-					<p>
-					<b>Q: What if I want breaks in between matches?</b><br />
-					The "Rounds" are just to indicate the time frames for the matches. You can always hold them on separate days etc.
-					</p>
-				</td>
-				<td>
-					License<br />
-					Kumar's fd.js library<br />
-					<a href="http://en.wikipedia.org/wiki/Round-robin_tournament">Wikipedia Page on Round-robin tournament</a>
-					
-					<h2>To do</h2>
-					/*
-						Technical:
-						Add "jump to 1st solution" and "jump to last solution" buttons
-						Set max no. of solutions to 5000.
-						Add option to "limit break" (warn users that browser might crash though...)
-						
-						Documentation:
-						Check compatibility with Kumar's license
-						Publicise it (add to Wiki page, get sites to link to our STS, etc)
-					*/
-				</td>
-			</tr>
-			</table></td>
-		</tr>
-		
-	</table>
+		<div class="heading">References</div>
+			
+		<div align="center">
+			<table border="1" cellpadding="10px">
+				<tr>
+					<td>
+						Our License<br />
+						Kumar's fd.js library. Check his license<br />
+						<a href="http://en.wikipedia.org/wiki/Round-robin_tournament">Wikipedia Page on Round-robin tournament</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</body>
 </html>
