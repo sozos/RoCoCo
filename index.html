@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <title>RoCoCo</title>
+    <body>
+		<link rel="stylesheet" type="text/css" href="UI.css" />
+		<h1>RoCoCo (Round-robin with Courts and Constraints)</h1>
+		<div id="left">
+			<form id="team">
+				<a class="button add" onclick="addTeam()">Teams</a>
+			</form>
+			<form id="venue">
+				<a class="button add" onclick="addVenue()">Venues</a>
+			</form>
+		</div>
+		<div id="main">
+			<table id="scheTable">
+				<thead>
+				<tbody>
+			</table>
+			<a id="playpause" class="button play" onclick="play()"> </a>
+			<a id="first" class="button first" onclick="first()"> </a>
+			<a id="prev" class="button prev" onclick="prev()"> </a>				
+			<input type="range" id="slider" min="0" max="0" value="0" onchange="drag(value)"></input>	
+			<a id="next" class="button next" onclick="next()"> </a>
+			<a id="last" class="button last" onclick="last()"> </a>
+			<div display="block">								
+				Solution: 
+				<input type="text" id="curSoln" onchange="jump(this)"></input>
+				 of 
+				<a id="numSoln"></a>
+			</div>
+			<p>
+			Create your round-robin tournament by filling in the names of your teams and venues.<br />
+			The table always shows a solution. Enter constraints for a slot by clicking on a slot and then choose possible or forbidden opponents and venues.<br />
+			See the <a href="documentation.htm">documentation</a>.
+			</p>
+		</div>
+        <script src="UI.js"></script>
+		<script src="jquery-1.7.1.js"></script>	
+    </body>
+</html>

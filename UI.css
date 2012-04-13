@@ -1,0 +1,119 @@
+/* buttons */
+a.button {
+	text-decoration:none;
+	display: inline-block;
+	width:25px;
+	line-height: 20px;
+	-webkit-user-select: none;
+}
+
+/*a.add{
+	color:#555555;
+	font-weight:bold;
+	line-height:25px;
+	background:url(img/user-plus.gif) 5px center no-repeat;
+	text-indent:25px;
+	border:1px outset white;
+	width:144px;
+	background-color:WhiteSmoke;
+}*/
+
+a.button:hover { cursor: pointer; }
+a.add {
+	display: block;
+	padding-left: 25px;
+	font-weight: bold;
+	background:url(img/user-plus.gif) 5px center no-repeat;
+}
+a.delete{ background: url(img/user-delete.gif) 5px center no-repeat; }
+a.play { background:url(img/control-play.gif) 5px center no-repeat; }
+a.pause { background:url(img/control-pause.gif) 5px center no-repeat; }
+a.complete { background:url(img/go.gif) 5px center no-repeat; }
+a.prev { background:url(img/control-back.gif) 5px center no-repeat; }
+a.next { background:url(img/control-forward.gif) 5px center no-repeat; }
+a.first { background:url(img/control-rewind.gif) 5px center no-repeat; }
+a.last { background:url(img/control-fforward.gif) 5px center no-repeat; }
+
+/* schedule table */
+
+#scheTable {
+	font: 85% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+	color: #333;
+	background: #F3F5F7;
+}
+
+#scheTable > tbody > tr > td:first-child {
+	background: #3A4856;
+	padding: 15px 10px;
+	color: #fff;
+	font-weight: normal;
+}
+#scheTable > tbody > tr:nth-child(even) { background: #F3F5F7; }
+#scheTable > tbody > tr:nth-child(odd) { background: #F0F2F4; }
+#scheTable > tbody > tr:hover {background: #EAECEE; color: #111;}
+#scheTable > tbody {border-bottom: 1px solid #EAECEE;}
+
+table  thead  th {
+	background: #3A4856;
+	padding: 15px 10px;
+	color: #fff;
+	font-weight: normal;
+}
+
+.select {
+	border-width: thick;
+	border-style: solid;
+}
+
+input {
+	width:120px;
+}
+
+#slider {
+	vertical-align: middle;
+}
+
+#left{
+position: absolute;
+top: 50px;
+bottom: 0; 
+left: 0;
+width: 200px; /*Width of frame div*/
+height: 100%;
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+padding: 10px;
+}
+
+#main{
+position: absolute;
+top: 50px; 
+left: 200px; /*Set left value to WidthOfFrameDiv*/
+right: 0;
+bottom: 0;
+overflow: auto; 
+}
+
+#curSoln {
+	width: 50px;
+	text-align:	center;
+}
+
+#team,  #venue{ 
+    width: 150px;
+    padding: 10px;
+    background: #f0f0f0;
+ 
+    /* Border style */
+    border: 1px solid #cccccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px; 
+ 
+    /* Border Shadow */
+    -moz-box-shadow: 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px #cccccc;
+    box-shadow: 2px 2px 2px #cccccc;
+}
