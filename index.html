@@ -1,86 +1,35 @@
-<!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Rococo : Round-robin with Courts and Constraints (RoCoCo)" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Rococo</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/SozoS/RoCoCo">Fork Me on GitHub</a>
-
-          <h1 id="project_title">Rococo</h1>
-          <h2 id="project_tagline">Round-robin with Courts and Constraints (RoCoCo)</h2>
-
-          <section id="downloads">
-            <a class="zip_download_link" href="https://github.com/SozoS/RoCoCo/zipball/master">Download this project as a .zip file</a>
-            <a class="tar_download_link" href="https://github.com/SozoS/RoCoCo/tarball/master">Download this project as a tar.gz file</a>
-          </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>ROCOCOCOCOCOCOCOCOCOCO</p>
-
-<h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact support@github.com and weâ€™ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Rococo maintained by <a href="https://github.com/SozoS">SozoS</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("Sports Tournament Scheduling Scheduler STS RoCoCo Davin Yik Jiun");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-
-  </body>
+    <head></head>
+    <title>Sports Tournament Scheduling</title>
+    <body>
+		<link rel="stylesheet" type="text/css" href="UI.css" />
+		<h1>Sports Tournament Scheduling</h1>
+		<div id="left">
+			<form id="team">
+				<a class="button add" onclick="addTeam()">Teams</a>
+			</form>
+			<form id="venue">
+				<a class="button add" onclick="addVenue()">Venues</a>
+			</form>
+		</div>
+		<div id="main">
+			<table id="scheTable">
+				<thead>
+				<tbody>
+			</table>
+			<a id="playpause" class="button play" onclick="play()"> </a>
+			<a id="prev" class="button prev" onclick="prev()"> </a>				
+			<input type="range" id="slider" min="0" max="0" value="0" onchange="drag(value)"></input>	
+			<a id="next" class="button next" onclick="next()"> </a>		
+			<div display="block">								
+				Solution: 
+				<input type="text" id="curSoln" onchange="jump(this)"></input>
+				 of 
+				<a id="numSoln"></a>
+			</div>
+			<a href="STS_doc.html">Append the doc stuff here after it's settled</a>
+		</div>
+        <script src="UI.js"></script>
+		<script src="jquery-1.7.1.js"></script>	
+    </body>
 </html>

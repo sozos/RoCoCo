@@ -1,0 +1,111 @@
+<html>
+	<body>
+		<h1>Sports Tournament Scheduling (STS)</h1>
+		<h3>Done by: Davin Choo and Lee Yik Jiun</h3>
+		<h3>Mentored by: Dr. Martin Henz & Srikumar Subramanian</h3>
+		
+		<h2>About</h2>
+		<p>
+		Sports Tournament Scheduling (STS) is a product of a project undertaken by 2 students (Davin and Yik Jiun) for their NUS module CS1010R - Javascript, under the guidance of Dr. Martin Henz.<br />
+		As part of their project, they are to make use of a constraint library built by Srikumar (insert link to fd.js/references below) to create a simple to use, yet powerful <b>dense single round robin tournament scheduler</b>.<br />
+		</p>
+		<p>
+		<i>Short definition of "Dense Single Round Robin"</i>
+		<ul>Dense
+			<li>Assume no breaks/rest in between rounds</li>
+		</ul>
+		<ul>Single Round Robin
+			<li>Every team must play against every other team by the end of the tournament</li>
+			<li>Each team can only play against one other team at any given round</li>
+			<li>Each venue can only take 2 teams or 0 teams (i.e. unused)</li>
+		</ul>
+		</p>
+		
+		<h2>How to use</h2>
+		<ol>
+			<li><b>Layout</b>
+				<br /><img src="documentation/STS_layout.png" />
+			</li>
+			<li><b>Making sense of <font color="blue">Solution Table</font></b>
+				<br /><img src="documentation/STS_makingsense.png" />
+				<p>
+				As we can see, to complete a single round robin tournament with 4 teams, we need 3 rounds.<br />
+				Let's focus on the first row (Team 1).<br /><br />
+				As we can see:<br />
+				In Round 1, Team 1 plays Team 2 at Venue 2.<br />
+				In Round 2, Team 1 plays Team 3 at Venue 2.<br />
+				In Round 3, Team 1 plays Team 4 at Venue 2.<br /><br />
+				The other rows are to be interpreted in similar fashion.
+				</p>
+			</li>
+			<li><b><font color="orange">Setting up</font></b>
+				<ul>
+					<li>Click "Teams"(Insert pic) to add teams</li>
+					<li>Click "Venues"(Insert pic) to add venues</li>
+					<li>Rename team and venue names as necessary</li>
+				</ul>
+			</li>
+			<li><b><font color="blue">Setting constraints</font></b>
+				<ul>
+					<li>Click on the team pairings</li>
+					<li>The selected pairings is now highlighted</li>
+					<li>The <font color="orange">Settings Panel</font> is now coloured</li>
+						<ul>
+							<li><font color="grey">Grey</font>: Current team</li>
+							<li><font color="green">Green</font>: Possible match-up/venue at selected round</li>
+							<li><font color="red">Red</font>: Disallowed opponent team/venue at selected round</li>
+						</ul>
+					</li>
+					<li>Click on the Teams/Venues to toggle between allowing/disallowing of opponent teams/venues for that given round</li>
+					<li>A <b>bold</b> display on the solution table represents the only allowed team/venue for that round</li>
+				</ul>
+			</li>
+			<li><b><font color="green">Generating solutions</font></b>
+				<ul>
+					<li>The first possible solution is already generated instantly</li>
+					<li>Press "play"(Insert pic) for more solutions</li>
+					<li>Press "pause"(Insert pic) to stop solution generation</li>
+				</ul>
+			</li>
+		</ol>
+		
+		<h2>Demos (embed video or interactive demo or both?)</h2>
+		<p>Demo 1 - Modelling a tournament</p>
+		<p>Demo 2 - Extracting the results for usage</p>
+		
+		<h2>Frequently Asked Questions (FAQ)</h2>
+		<p>
+		<b>Q: How do I reset the scheduler?</b><br />
+		Just press F5 or refresh your browser ;)
+		</p>
+		<p>
+		<b>Q: Can I export the solution table?</b><br />
+		Yes! Just select it with your mouse and copy-paste it!
+		</p>
+		<p>
+		<b>Q: What if I am holding the tournament at only 1 location with 3 courts?</b><br />
+		Think of the "Venues" as "Courts" and name them as "Court 1", "Court 2" and "Court 3". Everything will work out :)
+		</p>
+		<p>
+		<b>Q: What if I want breaks in between matches?</b><br />
+		The "Rounds" are just to indicate the time frames for the matches. You can always hold them on separate days etc.
+		</p>
+		
+		<h2>References/To do</h2>
+		<pre>
+		/*
+			Technical:
+			Add "jump to 1st solution" and "jump to last solution" buttons
+			Set max no. of solutions to 5000.
+			Add option to "limit break" (warn users that browser might crash though...)
+			
+			Documentation:
+			Include references to Kumar's library.
+			Wikipedia Page on "Round-robin tournament" - http://en.wikipedia.org/wiki/Round-robin_tournament
+			Redistribution under GNU public license (both page and code).
+			Check compatibility with Kumar's license
+			Publicise it (add to Wiki page, get sites to link to our STS, etc)
+		*/
+		</pre>
+	</body>
+</html>
