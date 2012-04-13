@@ -526,6 +526,26 @@ function updateVenueName(v) {
 	drag(slider.value);
 }
 
+function initConstraints() {
+	for (var r = 1; r <= numRounds; r++) {
+		for (var t = 1; t <= numTeams; t++) {
+			constraints(r, t);
+		}
+	}
+}
+
+function jump(elem) {
+	var num = elem.value;
+	var slider = document.getElementById('slider');
+	slider.value = num;
+	drag(num);
+}
+
+function first() {
+	$('#slider').attr('value', 1);
+	drag(1);
+}
+
 function prev() {
 	var slider = document.getElementById('slider');
 	if(parseInt(slider.value) > parseInt(slider.min)) {
@@ -540,17 +560,8 @@ function next() {
 	}
 }
 
-function initConstraints() {
-	for (var r = 1; r <= numRounds; r++) {
-		for (var t = 1; t <= numTeams; t++) {
-			constraints(r, t);
-		}
-	}
-}
-
-function jump(elem) {
-	var num = elem.value;
-	var slider = document.getElementById('slider');
-	slider.value = num;
-	drag(num);
+function last() {
+	var max = $('#slider').attr('max');
+	$('#slider').attr('value', max);
+	drag(max);
 }

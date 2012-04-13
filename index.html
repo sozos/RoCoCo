@@ -18,9 +18,11 @@
 				<tbody>
 			</table>
 			<a id="playpause" class="button play" onclick="play()"> </a>
+			<a id="first" class="button first" onclick="first()"> </a>
 			<a id="prev" class="button prev" onclick="prev()"> </a>				
 			<input type="range" id="slider" min="0" max="0" value="0" onchange="drag(value)"></input>	
-			<a id="next" class="button next" onclick="next()"> </a>		
+			<a id="next" class="button next" onclick="next()"> </a>
+			<a id="last" class="button last" onclick="last()"> </a>
 			<div display="block">								
 				Solution: 
 				<input type="text" id="curSoln" onchange="jump(this)"></input>

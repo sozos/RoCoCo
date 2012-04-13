@@ -31,6 +31,8 @@ a.pause { background:url(img/control-pause.gif) 5px center no-repeat; }
 a.complete { background:url(img/go.gif) 5px center no-repeat; }
 a.prev { background:url(img/control-back.gif) 5px center no-repeat; }
 a.next { background:url(img/control-forward.gif) 5px center no-repeat; }
+a.first { background:url(img/control-rewind.gif) 5px center no-repeat; }
+a.last { background:url(img/control-fforward.gif) 5px center no-repeat; }
 
 /* schedule table */
 
