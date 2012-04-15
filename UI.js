@@ -17,6 +17,7 @@ worker.addEventListener('message', function(e) {
 	}
 }, false);
 
+var maxLimit = 5000;
 var teamID = 0;
 var venueID = 0;
 var numTeams = 0;
@@ -200,7 +201,9 @@ function pause() {
 
 function partial(num) {
 	updateSlider(num);
-	if ($('#playpause').hasClass('pause')) {
+	if (num >= maxLimit) {
+		completed(num);
+	} else if ($('#playpause').hasClass('pause')) {
 		worker.postMessage({'cmd': 'run', 'arg': 10});
 	}
 }
