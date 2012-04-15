@@ -158,10 +158,10 @@ function updateUI(S) {
 			var cell = document.getElementById([varname]);
 			if (type === 'O') {
 				var team = teamNameArr[S[type][varname]];
-				cell.innerText = team === undefined ? 'Bye' : team;
+				cell.innerText = team === undefined ? '' : team;	// Bye
 			} else if (type === 'V') {
 				var venue = venueNameArr[S[type][varname]];
-				cell.innerText = venue === undefined ? 'Bye' : venue;
+				cell.innerText = venue === undefined ? '' : venue;	// Bye
 			}
 		}
 	}
@@ -480,7 +480,7 @@ function constraints(r, t) {
 	}
 	if (numTeams - tCount === 1) {
 		text = team.innerText;
-		if (text !== 'Bye') {
+		if (text !== '') {	// Bye
 			team.innerHTML = '<b>' + text + '</b>';
 		}
 	}
@@ -495,7 +495,7 @@ function constraints(r, t) {
 	}
 	if (numVenues - vCount === 1) {
 		text = venue.innerText;
-		if (text !== 'Bye') {
+		if (text !== '') {	// Bye
 			venue.innerHTML = '<b>' + text + '</b>';
 		}
 	}
