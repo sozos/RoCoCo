@@ -365,8 +365,10 @@ function initScheTable() {
 					var row = table2.insertRow(-1);
 					cell = row.insertCell(-1);
 					cell.style.minWidth = 50;
+					cell.className = 'teamCell';
 					cell.id = varname + 'O';
 					cell = row.insertCell(-1);
+					cell.className = 'venueCell';
 					cell.id = varname + 'V';
 					constraints(r, t);
 				}

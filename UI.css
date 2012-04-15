@@ -117,3 +117,6 @@ overflow: auto;
     -webkit-box-shadow: 2px 2px 2px #cccccc;
     box-shadow: 2px 2px 2px #cccccc;
 }
+
+.teamCell { border-right: 1px solid }
+.venueCell { border-left: 1px solid }
