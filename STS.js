@@ -164,7 +164,8 @@ var STS_Engine = (function() {
 		if (curSpace.is_solved()) {
 			// Weed out spaces where non-zero venue values are not 0 or 2
 			if (zeroortwo(curSpace)) {
-				solnArr.push(curSpace);	// THIS IS USING ALL THE MEMORY
+				//solnArr.push(curSpace);	// THIS IS USING ALL THE MEMORY
+				solnArr.push(parseSoln(curSpace));
 			} else {} // Nothing to do here.
 		} else {
 			varName = firstNonConstVar(curSpace);
@@ -212,7 +213,8 @@ var STS_Engine = (function() {
 	};
 	
 	that.return_soln = function(index) {
-		return parseSoln(index);
+		//return parseSoln(index);
+		return solnArr[index];
 	};
 	
 	that.return_state = function() {
@@ -268,8 +270,8 @@ var STS_Engine = (function() {
 		return true;
 	}
 	
-	function parseSoln(index) {
-		var S = solnArr[index];
+	function parseSoln(S) {
+		//var S = solnArr[index];
 		var S2 = {'O': [], 'V': []};
 		for (var r = 1; r <= numRounds; r++) {
 			for (var t = 1; t <= numTeams; t++) {

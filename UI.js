@@ -157,9 +157,11 @@ function updateUI(S) {
 		for (var varname in S[type]) {
 			var cell = document.getElementById([varname]);
 			if (type === 'O') {
-				cell.innerText = teamNameArr[S[type][varname]];
+				var team = teamNameArr[S[type][varname]];
+				cell.innerText = team === undefined ? 'Bye' : team;
 			} else if (type === 'V') {
-				cell.innerText = venueNameArr[S[type][varname]];
+				var venue = venueNameArr[S[type][varname]];
+				cell.innerText = venue === undefined ? 'Bye' : venue;
 			}
 		}
 	}
@@ -201,9 +203,10 @@ function pause() {
 
 function partial(num) {
 	updateSlider(num);
-	if (num >= maxLimit) {
+	/*if (num >= maxLimit) {
 		completed(num);
-	} else if ($('#playpause').hasClass('pause')) {
+	} else */
+	if ($('#playpause').hasClass('pause')) {
 		worker.postMessage({'cmd': 'run', 'arg': 10});
 	}
 }
@@ -477,7 +480,7 @@ function constraints(r, t) {
 	}
 	if (numTeams - tCount === 1) {
 		text = team.innerText;
-		if (text !== 'undefined') {
+		if (text !== 'Bye') {
 			team.innerHTML = '<b>' + text + '</b>';
 		}
 	}
@@ -492,7 +495,7 @@ function constraints(r, t) {
 	}
 	if (numVenues - vCount === 1) {
 		text = venue.innerText;
-		if (text !== 'undefined') {
+		if (text !== 'Bye') {
 			venue.innerHTML = '<b>' + text + '</b>';
 		}
 	}
