@@ -149,7 +149,6 @@ function delVenue(num) {
 	runSTS();
 }
 
-// update Team vs Round table
 function updateUI(S) {
 	initScheTable();
 	
@@ -157,11 +156,9 @@ function updateUI(S) {
 		for (var varname in S[type]) {
 			var cell = document.getElementById([varname]);
 			if (type === 'O') {
-				var team = teamNameArr[S[type][varname]];
-				cell.innerText = team === undefined ? 'Bye' : team;
+				cell.innerText = teamNameArr[S[type][varname]];
 			} else if (type === 'V') {
-				var venue = venueNameArr[S[type][varname]];
-				cell.innerText = venue === undefined ? 'Bye' : venue;
+				cell.innerText = venueNameArr[S[type][varname]];
 			}
 		}
 	}
@@ -201,7 +198,6 @@ function pause() {
 	});
 }
 
-// partial solutions
 function partial(num) {
 	updateSlider(num);
 	if ($('#playpause').hasClass('pause')) {
@@ -209,13 +205,11 @@ function partial(num) {
 	}
 }
 
-// completed solutions
 function completed(num) {
 	updateSlider(num);
 	$('#playpause').attr('class', 'button complete').removeAttr('onclick');
 }
 
-// show red green
 function showRG(r, t) {	
 	if (hlCell !== null) {
 		removeColours();
@@ -301,7 +295,6 @@ function delRGTArr(num) {
 	RGTArr = newRGTArr;
 }
 
-// add red green venue array
 function addRGVArr() {
 	for (var r = 1; r <= numRounds; r++) {
 	if(RGVArr[r] === undefined) { RGVArr[r] = []; }
@@ -316,7 +309,6 @@ function addRGVArr() {
 	}
 }
 
-// delete red green venue array
 function delRGVArr(num) {
 	var oldNumVenues = numVenues + 1;
 	var newRGVArr = [];
@@ -335,7 +327,6 @@ function delRGVArr(num) {
 	RGVArr = newRGVArr;
 }
 
-// Build Team vs Round table
 function initScheTable() {
 	var table = document.getElementById('scheTable');
 	table.innerHTML = '<thead></thread><tbody></tbody>';
@@ -380,7 +371,6 @@ function initScheTable() {
 	$('#slider').css('width', testWidth);
 }
 
-// parse red green team array to send to STS.js
 function parseRGTArr() {
 	var arr = {};
 	for (var r = 1; r <= numRounds; r++) {
@@ -398,7 +388,6 @@ function parseRGTArr() {
 	return arr;
 }
 
-// parse red green venue array to send to STS.js
 function parseRGVArr() {
 	var arr = {};
 	for (var r = 1; r <= numRounds; r++) {
@@ -422,7 +411,6 @@ function drag(num) {
 	worker.postMessage({'cmd': 'grab_results', 'arg': (num - 1)});
 }
 
-// invert red green team
 function invertRGT(r, t, o) {
 	var table = document.getElementById('R' + r + 'T' + t);
 	var elem = document.getElementById('team' + o);
@@ -439,7 +427,6 @@ function invertRGT(r, t, o) {
 	window.event.cancelBubble = true;
 }
 
-// invert red green venue
 function invertRGV(r, t, v) {
 	var table = document.getElementById('R' + r + 'T' + t);
 	
@@ -487,7 +474,7 @@ function constraints(r, t) {
 	}
 	if (numTeams - tCount === 1) {
 		text = team.innerText;
-		if (text !== 'Bye') {
+		if (text !== 'undefined') {
 			team.innerHTML = '<b>' + text + '</b>';
 		}
 	}
@@ -502,7 +489,7 @@ function constraints(r, t) {
 	}
 	if (numVenues - vCount === 1) {
 		text = venue.innerText;
-		if (text !== 'Bye') {
+		if (text !== 'undefined') {
 			venue.innerHTML = '<b>' + text + '</b>';
 		}
 	}

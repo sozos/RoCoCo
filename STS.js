@@ -164,7 +164,7 @@ var STS_Engine = (function() {
 		if (curSpace.is_solved()) {
 			// Weed out spaces where non-zero venue values are not 0 or 2
 			if (zeroortwo(curSpace)) {
-				solnArr.push(curSpace);	// THIS IS TAKING UP ALL THE MEMORY
+				solnArr.push(curSpace);
 			} else {} // Nothing to do here.
 		} else {
 			varName = firstNonConstVar(curSpace);
