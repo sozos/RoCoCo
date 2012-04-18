@@ -17,6 +17,7 @@ worker.addEventListener('message', function(e) {
 	}
 }, false);
 
+var maxLimit = 5000;
 var teamID = 0;
 var venueID = 0;
 var numTeams = 0;
@@ -156,9 +157,11 @@ function updateUI(S) {
 		for (var varname in S[type]) {
 			var cell = document.getElementById([varname]);
 			if (type === 'O') {
-				cell.innerText = teamNameArr[S[type][varname]];
+				var team = teamNameArr[S[type][varname]];
+				cell.innerText = team === undefined ? '' : team;	// Bye
 			} else if (type === 'V') {
-				cell.innerText = venueNameArr[S[type][varname]];
+				var venue = venueNameArr[S[type][varname]];
+				cell.innerText = venue === undefined ? '' : venue;	// Bye
 			}
 		}
 	}
@@ -200,6 +203,9 @@ function pause() {
 
 function partial(num) {
 	updateSlider(num);
+	/*if (num >= maxLimit) {
+		completed(num);
+	} else */
 	if ($('#playpause').hasClass('pause')) {
 		worker.postMessage({'cmd': 'run', 'arg': 10});
 	}
@@ -359,8 +365,10 @@ function initScheTable() {
 					var row = table2.insertRow(-1);
 					cell = row.insertCell(-1);
 					cell.style.minWidth = 50;
+					cell.className = 'teamCell';
 					cell.id = varname + 'O';
 					cell = row.insertCell(-1);
+					cell.className = 'venueCell';
 					cell.id = varname + 'V';
 					constraints(r, t);
 				}
@@ -474,7 +482,7 @@ function constraints(r, t) {
 	}
 	if (numTeams - tCount === 1) {
 		text = team.innerText;
-		if (text !== 'undefined') {
+		if (text !== '') {	// Bye
 			team.innerHTML = '<b>' + text + '</b>';
 		}
 	}
@@ -489,7 +497,7 @@ function constraints(r, t) {
 	}
 	if (numVenues - vCount === 1) {
 		text = venue.innerText;
-		if (text !== 'undefined') {
+		if (text !== '') {	// Bye
 			venue.innerHTML = '<b>' + text + '</b>';
 		}
 	}
